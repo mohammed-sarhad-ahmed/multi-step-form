@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+:root {
+  --color-primary--marine: hsl(213, 96%, 18%);
+  --color-primary--purplish: hsl(243, 100%, 62%);
+  --color-primary--pastel: hsl(228, 100%, 84%);
+  --color-primary--light--blue: hsl(206, 94%, 87%);
+  --color-primary--strawberry: hsl(354, 84%, 57%);
+
+  --color-secondary--cool-grey: hsl(231, 11%, 63%);
+  --color-secondary--light-grey: hsl(229, 24%, 87%);
+  --color-secondary--Magnolia: hsl(217, 100%, 97%);
+  --color-secondary--Alabaster: hsl(231, 100%, 99%);
+  --color-secondary--white: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: var(--color-secondary--light-grey);
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.bg-sideber {
+  background-image: url(../public/images/bg-sidebar-mobile.svg);
+}
+
+@media screen and (min-width: 867px) {
+  .bg-sideber {
+    background-image: url(../public/images/bg-sidebar-desktop.svg);
+  }
+}
