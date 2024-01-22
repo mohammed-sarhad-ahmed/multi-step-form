@@ -1,1 +1,1 @@
-this is one of the frontend mentor advance challenges.
+this is one of the frontend mentor advanced challenges.
