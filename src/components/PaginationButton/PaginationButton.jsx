@@ -5,7 +5,7 @@ function PaginationButton({ step, number }) {
   return (
     <li className={styles.button}>
       <NavLink to={step} className={styles.navLink}>
-        {number}{" "}
+        {number}
       </NavLink>
     </li>
   );
