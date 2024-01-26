@@ -11,9 +11,12 @@
   width: 100%;
   border-radius: 50%;
   border: 1px solid var(--color-secondary--white);
+  color: var(--color-secondary--white);
+  font-weight: 500;
 }
 
 :global(.active) {
   background-color: var(--color-primary--pastel);
   border: none;
+  color: var(--color-primary--marine);
 }

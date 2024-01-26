@@ -1,0 +1,12 @@
+.back {
+  border: none;
+  color: var(--color-secondary--cool-grey);
+  background-color: inherit;
+}
+.next {
+  background-color: var(--color-primary--marine);
+  color: var(--color-secondary--white);
+  border-radius: 0.5rem;
+  border: none;
+  padding: 1rem 4rem;
+}

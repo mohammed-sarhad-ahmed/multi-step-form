@@ -1,0 +1,21 @@
+.nav {
+  background-color: var(--color-secondary--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.nav > * {
+  cursor: pointer;
+}
+@media screen and (max-width: 260px) {
+  .nav {
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+}

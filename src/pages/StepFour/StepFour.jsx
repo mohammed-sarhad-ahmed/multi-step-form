@@ -1,7 +1,12 @@
 import styles from "./StepFour.module.css";
+import SideBar from "../../components/SideBar/SideBar";
 
 function StepFour() {
-  return <div></div>;
+  return (
+    <>
+      <SideBar></SideBar>
+    </>
+  );
 }
 
 export default StepFour;

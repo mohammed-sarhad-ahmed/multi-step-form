@@ -3,10 +3,9 @@
   flex-direction: column;
   align-items: center;
   background-image: url(../../../public/images/bg-sidebar-mobile.svg);
-  height: 35vh;
   background-repeat: no-repeat;
   background-size: contain;
-  gap: 3rem;
+  gap: 2.8rem;
 }
 
 .nav {
@@ -17,8 +16,21 @@
 }
 
 .contentContainer {
-  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-secondary--white);
-  width: 93%;
+  width: 95%;
   border-radius: 1rem;
+  gap: 1rem;
+}
+
+.contentContainer > * {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.contentContainer > :first-child {
+  margin-top: 3rem;
+}
+.contentContainer > :last-child {
+  margin-bottom: 3rem;
 }

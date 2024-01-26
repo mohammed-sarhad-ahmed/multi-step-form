@@ -1,0 +1,13 @@
+.mainTitle {
+  font-size: 2.5rem;
+}
+
+.mainTitle,
+.SubscriptionTitle {
+  color: var(--color-primary--marine);
+  font-weight: 700;
+}
+
+.SubscriptionTitle {
+  font-size: 2rem;
+}

@@ -1,0 +1,7 @@
+.subscription {
+  display: flex;
+  flex-direction: column;
+}
+.yearlyBonus {
+  font-size: 1.3rem;
+}

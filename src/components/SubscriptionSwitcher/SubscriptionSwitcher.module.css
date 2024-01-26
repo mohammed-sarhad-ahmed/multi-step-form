@@ -1,0 +1,42 @@
+.switcherContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary--light-grey);
+  border-radius: 1rem;
+  gap: 1rem;
+  padding: 2rem;
+  line-height: 1.6;
+}
+.outerSwitch {
+  display: flex;
+  align-items: center;
+  width: 5rem;
+  height: 2.4rem;
+  border-radius: 1.3rem;
+  background-color: var(--color-primary--marine);
+}
+.innerSwitch {
+  background-color: var(--color-secondary--Magnolia);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  transition: justify-content 0.5s ease-in 0.3s;
+}
+.monthlyActive {
+  justify-content: start;
+}
+
+.yearlyActive {
+  justify-content: end;
+}
+
+.currentlyActive {
+  color: var(--color-primary--marine);
+}
+
+.currentlyNotActive {
+  color: var(--color-secondary--cool-grey);
+}

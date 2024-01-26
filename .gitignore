@@ -26,3 +26,4 @@ dist-ssr
 README-template.md
 style-guide.md
 vite.config.js
+.vscode

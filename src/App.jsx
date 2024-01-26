@@ -3,17 +3,28 @@ import StepOne from "./pages/StepOne/StepOne.jsx";
 import StepTwo from "./pages/StepTwo/StepTwo.jsx";
 import StepThree from "./pages/StepThree/StepThree.jsx";
 import StepFour from "./pages/StepFour/StepFour.jsx";
-import SideBar from "./components/SideBar/SideBar.jsx";
+import SelectionOptions from "./components/SelectionOptions/SelectionOptions.jsx";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <BrowserRouter>
-        <SideBar />
         <Routes>
           <Route index element={<Navigate replace to="stepone" />} />
           <Route path="stepone" element={<StepOne />} />
-          <Route path="steptwo" element={<StepTwo />} />
+          <Route path="steptwo" element={<StepTwo />}>
+            <Route index element={<Navigate replace to="monthly" />} />
+            <Route
+              index
+              path="monthly"
+              element={<SelectionOptions type="monthly" />}
+            />
+            <Route
+              index
+              path="yearly"
+              element={<SelectionOptions type="yearly" />}
+            />
+          </Route>
           <Route path="stepthree" element={<StepThree />} />
           <Route path="stepfour" element={<StepFour />} />
         </Routes>

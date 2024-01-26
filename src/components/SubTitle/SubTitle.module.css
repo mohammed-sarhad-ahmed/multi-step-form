@@ -1,0 +1,11 @@
+.mainSubHeading {
+  font-size: 2rem;
+}
+.secondarySubHeading,
+.mainSubHeading {
+  color: var(--color-secondary--cool-grey);
+}
+
+.secondarySubHeading {
+  font-size: 1.6rem;
+}
