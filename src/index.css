@@ -12,7 +12,7 @@
   text-decoration: none;
   color: inherit;
   outline: none;
-  min-width: 0;
+  min-width: 0px;
 }
 
 :root {

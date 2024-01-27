@@ -3,11 +3,17 @@
 }
 
 .mainTitle,
-.SubscriptionTitle {
+.secondaryTitle {
   color: var(--color-primary--marine);
   font-weight: 700;
 }
 
-.SubscriptionTitle {
-  font-size: 2rem;
+.secondaryTitle {
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width: 315px) {
+  .secondaryTitle {
+    font-size: 1.4rem;
+  }
 }

@@ -4,6 +4,7 @@ import StepTwo from "./pages/StepTwo/StepTwo.jsx";
 import StepThree from "./pages/StepThree/StepThree.jsx";
 import StepFour from "./pages/StepFour/StepFour.jsx";
 import SelectionOptions from "./components/SelectionOptions/SelectionOptions.jsx";
+import AddOnsOptions from "./components/addOnsOptions/addOnsOptions.jsx";
 
 function App() {
   return (
@@ -25,7 +26,11 @@ function App() {
               element={<SelectionOptions type="yearly" />}
             />
           </Route>
-          <Route path="stepthree" element={<StepThree />} />
+          <Route path="stepthree" element={<StepThree />}>
+            <Route index element={<Navigate replace to="monthly" />} />
+            <Route path="monthly" element={<AddOnsOptions type="monthly" />} />
+            <Route path="yearly" element={<AddOnsOptions type="yearly" />} />
+          </Route>
           <Route path="stepfour" element={<StepFour />} />
         </Routes>
       </BrowserRouter>

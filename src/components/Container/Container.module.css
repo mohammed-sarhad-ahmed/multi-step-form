@@ -5,6 +5,7 @@
 .inputGap {
   gap: 0.2rem;
 }
-.selectionGap {
+.selectionGap,
+.addOnsGap {
   gap: 1rem;
 }
