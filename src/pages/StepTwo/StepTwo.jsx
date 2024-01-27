@@ -18,7 +18,7 @@ function StepTwo() {
       </SideBar>
       <Navigation>
         <Button type="back">Go Back</Button>
-        <Button type="next">Next</Button>
+        <Button type="next">Next Step</Button>
       </Navigation>
     </>
   );

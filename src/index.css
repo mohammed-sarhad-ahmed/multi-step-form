@@ -57,7 +57,3 @@ video {
   display: block;
   max-width: 100%;
 }
-
-.bg-sideber {
-  background-image: url(images/bg-sidebar-mobile.svg);
-}

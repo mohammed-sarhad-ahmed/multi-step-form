@@ -39,9 +39,8 @@ function StepOne() {
           />
         </Container>
       </SideBar>
-      <Navigation>
-        <Button type="back">Go Back</Button>
-        <Button type="next">Next</Button>
+      <Navigation page="one">
+        <Button type="next">Next Step</Button>
       </Navigation>
     </>
   );
