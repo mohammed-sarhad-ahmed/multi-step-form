@@ -1,0 +1,12 @@
+export const MONTHLY_ARCADE_PRICE = 9;
+export const MONTHLY_ADVANCED_PRICE = 12;
+export const MONTHLY_PRO_PRICE = 15;
+export const YEARLY_ARCADE_PRICE = 90;
+export const YEARLY_ADVANCED_PRICE = 120;
+export const YEARLY_PRO_PRICE = 150;
+export const MONTHLY_ONLINE_SERVICES = 1;
+export const MONTHLY_LARGER_STORAGE = 2;
+export const MONTHLY_CUSTOMIZABLE_PROFILE = 2;
+export const YEARLY_ONLINE_SERVICES = 10;
+export const YEARLY_LARGER_STORAGE = 20;
+export const YEARLY_CUSTOMIZABLE_PROFILE = 20;

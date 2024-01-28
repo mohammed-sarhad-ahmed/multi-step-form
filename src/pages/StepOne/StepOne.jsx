@@ -6,7 +6,7 @@ import SubTitle from "../../components/SubTitle/SubTitle";
 import PersonalInfoInput from "../../components/PersonalInfoInput/PersonalInfoInput";
 import Container from "../../components/Container/Container";
 
-function StepOne() {
+function StepOne({ name, email, phoneNumber, dispatch }) {
   return (
     <>
       <SideBar>
@@ -20,6 +20,9 @@ function StepOne() {
             inputType="text"
             labelText="Name"
             placeHolder="e.g. Stephen King"
+            value={name}
+            dispatch={dispatch}
+            event="setName"
           />
         </Container>
         <Container gap="inputGap">
@@ -28,6 +31,9 @@ function StepOne() {
             inputType="email"
             labelText="Email Address"
             placeHolder="e.g. StephenKing@lorem.com"
+            value={email}
+            dispatch={dispatch}
+            event="setEmail"
           />
         </Container>
         <Container gap="inputGap">
@@ -36,6 +42,9 @@ function StepOne() {
             inputType="tel"
             labelText="Phone Number"
             placeHolder="e.g. +1 234 567 890"
+            value={phoneNumber}
+            dispatch={dispatch}
+            event="setPhoneNumber"
           />
         </Container>
       </SideBar>

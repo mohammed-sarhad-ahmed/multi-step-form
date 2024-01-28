@@ -2,7 +2,11 @@
   display: flex;
   border: 0.1rem solid var(--color-secondary--light-grey);
   border-radius: 0.5rem;
-  padding: 1rem;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: start;
+  padding: 1.5rem 1rem;
+}
+.active {
+  border: 0.2rem solid var(--color-primary--purplish);
+  background-color: var(--color-secondary--Magnolia);
 }

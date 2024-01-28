@@ -13,12 +13,21 @@ function Button({ children, type }) {
           case "/stepone":
             whereToNavigate = "/steptwo";
             break;
-          case "/steptwo/yearly":
           case "/steptwo/monthly":
-            whereToNavigate = type === "back" ? "/stepone" : "/stepthree";
+            whereToNavigate =
+              type === "back" ? "/stepone" : "/stepthree/monthly";
             break;
-          case "/stepthree":
-            whereToNavigate = type === "back" ? "/steptwo" : "/stepfour";
+          case "/steptwo/yearly":
+            whereToNavigate =
+              type === "back" ? "/stepone" : "/stepthree/yearly";
+            break;
+          case "/stepthree/yearly":
+            whereToNavigate =
+              type === "back" ? "/steptwo/yearly" : "/stepfour/yearly";
+            break;
+          case "/stepthree/monthly":
+            whereToNavigate =
+              type === "back" ? "/steptwo/monthly" : "/stepfour/monthly";
             break;
           case "/stepfour":
             whereToNavigate = type === "back" ? "/stepthree" : "/stepfive";

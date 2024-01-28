@@ -1,6 +1,7 @@
 .subscription {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 }
 .yearlyBonus {
   font-size: 1.4rem;

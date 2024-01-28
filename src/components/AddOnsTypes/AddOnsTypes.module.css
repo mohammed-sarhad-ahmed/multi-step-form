@@ -20,6 +20,11 @@
   margin-left: auto;
 }
 
+.checked {
+  border: 0.2rem solid var(--color-primary--purplish);
+  background-color: var(--color-secondary--Magnolia);
+}
+
 @media screen and (max-width: 375px) {
   .container {
     padding-left: 0.5rem;
