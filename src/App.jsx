@@ -1,15 +1,17 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useReducer } from "react";
-import { reducer, initialState } from "./reducer.jsx";
+import { reducer, initialState } from "./reducer.js";
 import StepOne from "./pages/StepOne/StepOne.jsx";
 import StepTwo from "./pages/StepTwo/StepTwo.jsx";
 import StepThree from "./pages/StepThree/StepThree.jsx";
-import StepFour from "./pages/StepFour/StepFour.jsx";
+// import StepFour from "./pages/StepFour/StepFour.jsx";
 
 function App() {
-  const [{ name, email, phoneNumber, activeSubType, plan, addOns }, dispatch] =
-    useReducer(reducer, initialState);
-  console.log(activeSubType, plan);
+  const [
+    { name, email, phoneNumber, plans, subscriptionInterval, addOns },
+    dispatch,
+  ] = useReducer(reducer, initialState);
+  console.log(subscriptionInterval, plans, addOns);
   return (
     <div className="app">
       <BrowserRouter>
@@ -30,9 +32,9 @@ function App() {
             path="steptwo"
             element={
               <StepTwo
-                activeSubType={activeSubType}
+                subscriptionInterval={subscriptionInterval}
                 dispatch={dispatch}
-                plan={plan}
+                plans={plans}
               />
             }
           />
@@ -41,12 +43,11 @@ function App() {
             element={
               <StepThree
                 dispatch={dispatch}
-                activeSubType={activeSubType}
+                subscriptionInterval={subscriptionInterval}
                 addOns={addOns}
               />
             }
           />
-          <Route path="stepfour" element={<StepFour />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -54,3 +55,15 @@ function App() {
 }
 
 export default App;
+/*
+          <Route
+            path="stepfour"
+            element={
+              <StepFour
+                activeSubType={activeSubType}
+                plan={plan}
+                addOns={addOns}
+              />
+            }
+          />{" "}
+          */

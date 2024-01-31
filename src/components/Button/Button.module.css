@@ -1,12 +1,34 @@
-.back {
+.back,
+.next,
+.confirm,
+.change {
   border: none;
+}
+
+.next,
+.confirm {
+  color: var(--color-secondary--white);
+  padding: 1rem 4rem;
+  border-radius: 0.5rem;
+}
+
+.back,
+.change {
   color: var(--color-secondary--cool-grey);
   background-color: inherit;
 }
 .next {
   background-color: var(--color-primary--marine);
-  color: var(--color-secondary--white);
-  border-radius: 0.5rem;
-  border: none;
-  padding: 1rem 4rem;
+}
+
+.confirm {
+  background-color: var(--color-primary--purplish);
+}
+
+.change {
+  text-decoration: solid 0.3rem underline;
+}
+
+.change:hover {
+  cursor: pointer;
 }

@@ -1,11 +1,11 @@
 import styles from "./SubscriptionSwitcher.module.css";
 
-function SubscriptionSwitcher({ dispatch, activeSubType }) {
+function SubscriptionSwitcher({ dispatch, subscriptionInterval }) {
   return (
     <div className={styles.switcherContainer}>
       <p
         className={
-          activeSubType === "monthly"
+          subscriptionInterval === "monthly"
             ? styles.currentlyActive
             : styles.currentlyNotActive
         }
@@ -14,19 +14,19 @@ function SubscriptionSwitcher({ dispatch, activeSubType }) {
       </p>
       <div
         className={`${styles.outerSwitch} ${
-          activeSubType === "monthly"
+          subscriptionInterval === "monthly"
             ? styles.monthlyActive
             : styles.yearlyActive
         }`}
       >
         <div
           className={styles.innerSwitch}
-          onClick={() => dispatch({ type: "changeSubType" })}
+          onClick={() => dispatch({ type: "changeSubscriptionInterval" })}
         ></div>
       </div>
       <p
         className={
-          activeSubType === "yearly"
+          subscriptionInterval === "yearly"
             ? styles.currentlyActive
             : styles.currentlyNotActive
         }

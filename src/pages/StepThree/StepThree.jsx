@@ -6,11 +6,7 @@ import Button from "../../components/Button/Button";
 import Container from "../../components/Container/Container";
 import AddOnsTypes from "../../components/addOnsTypes/addOnsTypes";
 
-function StepThree({
-  activeSubType,
-  addOns: { onlineServices, largerStorage, customizableProfile },
-  dispatch,
-}) {
+function StepThree({ subscriptionInterval, addOns, dispatch }) {
   return (
     <>
       <SideBar>
@@ -19,30 +15,14 @@ function StepThree({
           add-ons help enhance your gaming experience
         </SubTitle>
         <Container gap="addOnsGap">
-          <AddOnsTypes
-            title="Online Services"
-            subTitle="Access multiplayer games"
-            price={activeSubType === "monthly" ? "+$1/mo" : "+$10/yr"}
-            checked={onlineServices.checked}
-            dispatch={dispatch}
-            event="changeOnlineServiceState"
-          />
-          <AddOnsTypes
-            title="Larger Storage"
-            subTitle="Extra 1TB of cloud storage"
-            price={activeSubType === "monthly" ? "+$2/mo" : "+$20/yr"}
-            checked={largerStorage.checked}
-            dispatch={dispatch}
-            event="changeLargerStorageState"
-          />
-          <AddOnsTypes
-            title="Customizable Profile"
-            subTitle="Custom theme on your profile"
-            price={activeSubType === "monthly" ? "+$2/mo" : "+$20/yr"}
-            checked={customizableProfile.checked}
-            dispatch={dispatch}
-            event="changeCustomizableProfileState"
-          />
+          {addOns.map((addOn) => (
+            <AddOnsTypes
+              addOn={addOn}
+              subscriptionInterval={subscriptionInterval}
+              key={addOn.type}
+              dispatch={dispatch}
+            />
+          ))}
         </Container>
       </SideBar>
       <Navigation>

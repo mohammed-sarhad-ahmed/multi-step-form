@@ -7,8 +7,12 @@ import SubscriptionSwitcher from "../../components/SubscriptionSwitcher/Subscrip
 import Container from "../../components/Container/Container";
 import Selection from "../../components/Selection/Selection";
 import SubscriptionType from "../../components/SubscriptionType/SubscriptionType";
+import { AbbreviateTimeIntervalName } from "../../helper";
 
-function StepTwo({ activeSubType, dispatch, plan }) {
+function StepTwo({ subscriptionInterval, plans, dispatch }) {
+  const subscriptionIntervalAbbreviation =
+    AbbreviateTimeIntervalName(subscriptionInterval);
+
   return (
     <>
       <SideBar>
@@ -17,64 +21,21 @@ function StepTwo({ activeSubType, dispatch, plan }) {
           You have the option of monthly or yearly billing.
         </SubTitle>
         <Container gap="selectionGap">
-          <Selection
-            alt="arcade selection"
-            src="/images/icon-arcade.svg"
-            plan={plan}
-            type="arcade"
-            dispatch={dispatch}
-            activeSubType={activeSubType}
-          >
-            {activeSubType === "monthly" ? (
-              <SubscriptionType title="Arcade" subTitle="$9/mo" />
-            ) : (
-              <SubscriptionType
-                title="Arcade"
-                subTitle="$90/yr"
-                yearlyBonus="2 months free"
-              />
-            )}
-          </Selection>
-          <Selection
-            alt="advanced selection"
-            src="/images/icon-advanced.svg"
-            plan={plan}
-            type="advanced"
-            activeSubType={activeSubType}
-            dispatch={dispatch}
-          >
-            {activeSubType === "monthly" ? (
-              <SubscriptionType title="Advanced" subTitle="$12/mo" />
-            ) : (
-              <SubscriptionType
-                title="Advanced"
-                subTitle="$120/yr"
-                yearlyBonus="2 months free"
-              />
-            )}
-          </Selection>
-          <Selection
-            alt="pro selection"
-            src="/images/icon-pro.svg"
-            plan={plan}
-            type="pro"
-            activeSubType={activeSubType}
-            dispatch={dispatch}
-          >
-            {activeSubType === "monthly" ? (
-              <SubscriptionType title="Pro" subTitle="$15/mo" />
-            ) : (
-              <SubscriptionType
-                title="Pro"
-                subTitle="$150/yr"
-                yearlyBonus="2 months free"
-              />
-            )}
-          </Selection>
+          {plans.map((plan) => {
+            return (
+              <Selection plan={plan} key={plan.type} dispatch={dispatch}>
+                <SubscriptionType
+                  title={plan.type}
+                  subTitle={`$${plan.price}/${subscriptionIntervalAbbreviation}`}
+                  yearlyBonus={plan.bonus}
+                />
+              </Selection>
+            );
+          })}
         </Container>
         <SubscriptionSwitcher
+          subscriptionInterval={subscriptionInterval}
           dispatch={dispatch}
-          activeSubType={activeSubType}
         />
       </SideBar>
       <Navigation>

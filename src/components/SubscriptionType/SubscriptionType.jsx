@@ -5,7 +5,9 @@ import SubTitle from "../SubTitle/SubTitle";
 function SubscriptionType({ title, subTitle, yearlyBonus }) {
   return (
     <div className={styles.subscription}>
-      <Title type="secondaryTitle">{title}</Title>
+      <Title type="secondaryTitle" className="capitalize">
+        {title}
+      </Title>
       <SubTitle type="secondarySubHeading">{subTitle}</SubTitle>
       {yearlyBonus && <p className={styles.yearlyBonus}>{yearlyBonus}</p>}
     </div>

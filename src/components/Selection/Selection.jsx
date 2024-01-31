@@ -1,11 +1,11 @@
 import styles from "./Selection.module.css";
-function Selection({ alt, src, plan, type, children, dispatch }) {
+function Selection({ plan, children, dispatch }) {
   return (
     <div
-      className={`${styles.select} ${plan.type === type ? styles.active : ""}`}
-      onClick={() => dispatch({ type: "selectPlan", payload: type })}
+      className={`${styles.select} ${plan.isActive ? styles.active : ""}`}
+      onClick={() => dispatch({ type: "selectPlan", payload: plan.type })}
     >
-      <img src={src} alt={alt} />
+      <img src={plan.image.src} alt={plan.image.alt} />
       <div>{children}</div>
     </div>
   );

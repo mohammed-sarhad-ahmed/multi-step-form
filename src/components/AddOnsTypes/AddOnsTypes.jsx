@@ -1,21 +1,28 @@
 import SubTitle from "../SubTitle/SubTitle";
 import Title from "../Title/Title";
 import styles from "./addOnsTypes.module.css";
+import { AbbreviateTimeIntervalName } from "../../helper";
 
-function AddOnsTypes({ title, subTitle, price, checked, event, dispatch }) {
+function AddOnsTypes({ addOn, subscriptionInterval, dispatch }) {
+  const subscriptionIntervalAbbreviation =
+    AbbreviateTimeIntervalName(subscriptionInterval);
   return (
-    <div className={`${styles.container} ${checked ? styles.checked : ""}`}>
+    <div
+      className={`${styles.container} ${addOn.checked ? styles.checked : ""}`}
+    >
       <input
         type="checkbox"
         className={styles.check}
-        checked={checked}
-        onChange={() => dispatch({ type: event })}
+        checked={addOn.checked}
+        onChange={() => dispatch({ type: "tickAddOn", payload: addOn.type })}
       />
       <div className={styles.info}>
-        <Title type="secondaryTitle">{title}</Title>
-        <SubTitle type="secondarySubHeading">{subTitle}</SubTitle>
+        <Title type="secondaryTitle">{addOn.type}</Title>
+        <SubTitle type="secondarySubHeading">{addOn.description}</SubTitle>
       </div>
-      <p className={styles.price}>{price}</p>
+      <p
+        className={styles.price}
+      >{`+$${addOn.price}/${subscriptionIntervalAbbreviation}`}</p>
     </div>
   );
 }

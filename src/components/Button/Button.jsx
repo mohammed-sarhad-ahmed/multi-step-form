@@ -1,13 +1,16 @@
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Button.module.css";
 
 function Button({ children, type }) {
-  const location = useLocation();
-  const navigate = useNavigate();
-  return (
-    <button
-      className={styles[type]}
-      onClick={() => {
+  return <button className={styles[type]}>{children}</button>;
+}
+
+export default Button;
+
+// const location = useLocation();
+// const navigate = useNavigate();
+/**
+ *  onClick={() => {
         let whereToNavigate;
         switch (location.pathname) {
           case "/stepone":
@@ -35,10 +38,4 @@ function Button({ children, type }) {
         }
         navigate(whereToNavigate);
       }}
-    >
-      {children}
-    </button>
-  );
-}
-
-export default Button;
+ */
