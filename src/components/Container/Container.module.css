@@ -1,11 +1,28 @@
-.container {
+.input,
+.selection,
+.addOns,
+.summary {
   display: flex;
   flex-direction: column;
 }
-.inputGap {
+
+.selection,
+.addOns {
+  gap: 1rem;
+}
+
+.input {
   gap: 0.2rem;
 }
-.selectionGap,
-.addOnsGap {
-  gap: 1rem;
+.summary {
+  padding: 1rem;
+  background-color: var(--color-secondary--light-grey);
+  border-radius: 1rem;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-top: 1rem;
 }

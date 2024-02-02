@@ -9,9 +9,3 @@
 .secondarySubHeading {
   font-size: 1.4rem;
 }
-
-@media screen and (max-width: 315px) {
-  .secondarySubHeading {
-    font-size: 1.2rem;
-  }
-}

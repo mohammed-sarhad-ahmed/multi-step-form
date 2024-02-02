@@ -13,9 +13,9 @@ const buttons = Array.from({ length: 4 }, (_, index) => {
   };
 });
 
-function SideBar({ children }) {
+function SideBar({ children, className }) {
   return (
-    <div className={styles.sideBar}>
+    <div className={`${styles.sideBar}  `}>
       <ul className={styles.nav}>
         {buttons.map((button) => {
           return (
@@ -27,7 +27,9 @@ function SideBar({ children }) {
           );
         })}
       </ul>
-      <div className={styles.contentContainer}>{children}</div>
+      <div className={`${styles.contentContainer} ${styles[className]}`}>
+        {children}
+      </div>
     </div>
   );
 }

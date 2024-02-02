@@ -5,8 +5,11 @@ import Navigation from "../../components/navigation/Navigation";
 import Button from "../../components/Button/Button";
 import Container from "../../components/Container/Container";
 import AddOnsTypes from "../../components/addOnsTypes/addOnsTypes";
+import { addonsMonthly, addonsYearly } from "../../data";
 
-function StepThree({ subscriptionInterval, addOns, dispatch }) {
+function StepThree({ subscriptionInterval, checkedAddOns, dispatch }) {
+  const currentAddOns =
+    subscriptionInterval === "monthly" ? addonsMonthly : addonsYearly;
   return (
     <>
       <SideBar>
@@ -14,13 +17,14 @@ function StepThree({ subscriptionInterval, addOns, dispatch }) {
         <SubTitle type="mainSubHeading">
           add-ons help enhance your gaming experience
         </SubTitle>
-        <Container gap="addOnsGap">
-          {addOns.map((addOn) => (
+        <Container className="addOns">
+          {currentAddOns.map((addOn) => (
             <AddOnsTypes
               addOn={addOn}
               subscriptionInterval={subscriptionInterval}
               key={addOn.type}
               dispatch={dispatch}
+              checked={checkedAddOns.includes(addOn.type)}
             />
           ))}
         </Container>

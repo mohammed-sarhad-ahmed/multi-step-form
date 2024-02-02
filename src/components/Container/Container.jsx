@@ -1,7 +1,7 @@
 import styles from "./Container.module.css";
 
-function Container({ children, gap }) {
-  return <div className={`${styles.container} ${styles[gap]}`}>{children}</div>;
+function Container({ children, className }) {
+  return <div className={styles[className]}>{children}</div>;
 }
 
 export default Container;

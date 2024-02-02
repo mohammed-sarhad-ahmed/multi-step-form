@@ -9,14 +9,8 @@
 }
 
 .secondaryTitle {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 .capitalize {
   text-transform: capitalize;
-}
-
-@media screen and (max-width: 315px) {
-  .secondaryTitle {
-    font-size: 1.4rem;
-  }
 }

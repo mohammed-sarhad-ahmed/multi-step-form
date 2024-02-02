@@ -25,29 +25,12 @@
   background-color: var(--color-secondary--Magnolia);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 380px) {
   .container {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
   .price {
     font-size: 1.3rem;
-  }
-}
-@media screen and (max-width: 350px) {
-  .check {
-    margin-right: 0.8rem;
-    width: 1.65rem;
-    height: 1.65rem;
-  }
-}
-@media screen and (max-width: 300px) {
-  .price {
-    font-size: 1.2rem;
-  }
-  .check {
-    margin-right: 0.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
   }
 }

@@ -7,6 +7,10 @@
   background-size: contain;
   gap: 2.8rem;
 }
+.center {
+  justify-content: center;
+  align-items: center;
+}
 
 .nav {
   display: flex;

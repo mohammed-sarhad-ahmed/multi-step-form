@@ -14,7 +14,7 @@ function StepOne({ name, email, phoneNumber, dispatch }) {
         <SubTitle type="mainSubHeading">
           Please provide you name, email address, and phone number.
         </SubTitle>
-        <Container gap="inputGap">
+        <Container className="input">
           <PersonalInfoInput
             inputId="name"
             inputType="text"
@@ -25,7 +25,7 @@ function StepOne({ name, email, phoneNumber, dispatch }) {
             event="setName"
           />
         </Container>
-        <Container gap="inputGap">
+        <Container className="input">
           <PersonalInfoInput
             inputId="email"
             inputType="email"
@@ -36,7 +36,7 @@ function StepOne({ name, email, phoneNumber, dispatch }) {
             event="setEmail"
           />
         </Container>
-        <Container gap="inputGap">
+        <Container className="input">
           <PersonalInfoInput
             inputId="phone"
             inputType="tel"

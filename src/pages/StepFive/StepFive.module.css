@@ -1,0 +1,10 @@
+.thankYouParagraph {
+  font-size: 1.7rem;
+  color: var(--color-secondary--cool-grey);
+  text-align: center;
+  line-height: 1.6;
+}
+.thankYouImg {
+  width: 5rem;
+  height: 5rem;
+}

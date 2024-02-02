@@ -1,27 +1,26 @@
 .addOns,
 .addOnsInfoContainer,
-.mainInfoContainer {
+.planInfoContainer {
   display: flex;
 }
 
-.mainInfoContainer,
+.planInfoContainer,
 .addOns {
   justify-content: space-between;
 }
 
-.summary {
-  padding: 1rem;
-  background-color: var(--color-secondary--light-grey);
-  border-radius: 0.5rem;
-}
-
 .planText,
-.activeSubText {
+.activeSubscriptionInterval {
   text-transform: capitalize;
   display: inline-block;
 }
+.planText,
+.activeSubscriptionInterval,
+.planPrice {
+  font-weight: 700;
+}
 
-.mainInfoContainer,
+.planInfoContainer,
 .hr {
   margin-bottom: 1.5rem;
 }
@@ -34,4 +33,17 @@
 .addOnsInfoContainer {
   flex-direction: column;
   gap: 2rem;
+}
+
+.addOnName,
+.totalText {
+  color: var(--color-secondary--cool-grey);
+}
+.planPrice,
+.addOnPrice {
+  color: var(--color-primary--marine);
+}
+
+.totalPrice {
+  color: var(--color-primary--purplish);
 }

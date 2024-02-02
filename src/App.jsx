@@ -4,14 +4,22 @@ import { reducer, initialState } from "./reducer.js";
 import StepOne from "./pages/StepOne/StepOne.jsx";
 import StepTwo from "./pages/StepTwo/StepTwo.jsx";
 import StepThree from "./pages/StepThree/StepThree.jsx";
-// import StepFour from "./pages/StepFour/StepFour.jsx";
+import StepFour from "./pages/StepFour/StepFour.jsx";
+import StepFive from "./pages/StepFive/StepFive.jsx";
 
 function App() {
   const [
-    { name, email, phoneNumber, plans, subscriptionInterval, addOns },
+    {
+      name,
+      email,
+      phoneNumber,
+      activePlan,
+      subscriptionInterval,
+      checkedAddOns,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
-  console.log(subscriptionInterval, plans, addOns);
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -34,7 +42,7 @@ function App() {
               <StepTwo
                 subscriptionInterval={subscriptionInterval}
                 dispatch={dispatch}
-                plans={plans}
+                activePlan={activePlan}
               />
             }
           />
@@ -44,10 +52,21 @@ function App() {
               <StepThree
                 dispatch={dispatch}
                 subscriptionInterval={subscriptionInterval}
-                addOns={addOns}
+                checkedAddOns={checkedAddOns}
               />
             }
           />
+          <Route
+            path="stepfour"
+            element={
+              <StepFour
+                subscriptionInterval={subscriptionInterval}
+                activePlan={activePlan}
+                checkedAddOns={checkedAddOns}
+              />
+            }
+          />
+          <Route path="stepfive" element={<StepFive />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -55,15 +74,3 @@ function App() {
 }
 
 export default App;
-/*
-          <Route
-            path="stepfour"
-            element={
-              <StepFour
-                activeSubType={activeSubType}
-                plan={plan}
-                addOns={addOns}
-              />
-            }
-          />{" "}
-          */

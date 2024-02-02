@@ -7,11 +7,14 @@ import SubscriptionSwitcher from "../../components/SubscriptionSwitcher/Subscrip
 import Container from "../../components/Container/Container";
 import Selection from "../../components/Selection/Selection";
 import SubscriptionType from "../../components/SubscriptionType/SubscriptionType";
-import { AbbreviateTimeIntervalName } from "../../helper";
+import { abbreviateTimeIntervalName } from "../../helper";
+import { plansYearly, plansMonthly } from "../../data";
 
-function StepTwo({ subscriptionInterval, plans, dispatch }) {
+function StepTwo({ subscriptionInterval, activePlan, dispatch }) {
   const subscriptionIntervalAbbreviation =
-    AbbreviateTimeIntervalName(subscriptionInterval);
+    abbreviateTimeIntervalName(subscriptionInterval);
+  const currentPlans =
+    subscriptionInterval === "monthly" ? plansMonthly : plansYearly;
 
   return (
     <>
@@ -20,10 +23,15 @@ function StepTwo({ subscriptionInterval, plans, dispatch }) {
         <SubTitle type="mainSubHeading">
           You have the option of monthly or yearly billing.
         </SubTitle>
-        <Container gap="selectionGap">
-          {plans.map((plan) => {
+        <Container className="selection">
+          {currentPlans.map((plan) => {
             return (
-              <Selection plan={plan} key={plan.type} dispatch={dispatch}>
+              <Selection
+                plan={plan}
+                activePlan={activePlan}
+                key={plan.type}
+                dispatch={dispatch}
+              >
                 <SubscriptionType
                   title={plan.type}
                   subTitle={`$${plan.price}/${subscriptionIntervalAbbreviation}`}
