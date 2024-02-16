@@ -25,6 +25,10 @@
   border-radius: 50%;
   transition: justify-content 0.5s ease-in 0.3s;
 }
+
+.innerSwitch:hover {
+  cursor: pointer;
+}
 .monthlyActive {
   justify-content: start;
 }

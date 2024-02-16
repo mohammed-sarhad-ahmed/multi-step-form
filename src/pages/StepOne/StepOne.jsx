@@ -5,8 +5,19 @@ import Title from "../../components/Title/Title";
 import SubTitle from "../../components/SubTitle/SubTitle";
 import PersonalInfoInput from "../../components/PersonalInfoInput/PersonalInfoInput";
 import Container from "../../components/Container/Container";
+import { inputs } from "../../data";
+import { useEffect, useState } from "react";
 
 function StepOne({ name, email, phoneNumber, dispatch }) {
+  const [isThereError, setIsThereError] = useState(true);
+  console.log(isThereError);
+  useEffect(() => {
+    const inputs = document.querySelectorAll("input");
+    for (const input of inputs) {
+      if (input.matches("input:invalid")) return setIsThereError(true);
+    }
+    setIsThereError(false);
+  });
   return (
     <>
       <SideBar>
@@ -16,40 +27,30 @@ function StepOne({ name, email, phoneNumber, dispatch }) {
         </SubTitle>
         <Container className="input">
           <PersonalInfoInput
-            inputId="name"
-            inputType="text"
-            labelText="Name"
-            placeHolder="e.g. Stephen King"
+            {...inputs.name}
+            dispatch={dispatch}
             value={name}
-            dispatch={dispatch}
-            event="setName"
           />
         </Container>
         <Container className="input">
           <PersonalInfoInput
-            inputId="email"
-            inputType="email"
-            labelText="Email Address"
-            placeHolder="e.g. StephenKing@lorem.com"
+            {...inputs.emailAddress}
+            dispatch={dispatch}
             value={email}
-            dispatch={dispatch}
-            event="setEmail"
           />
         </Container>
         <Container className="input">
           <PersonalInfoInput
-            inputId="phone"
-            inputType="tel"
-            labelText="Phone Number"
-            placeHolder="e.g. +1 234 567 890"
-            value={phoneNumber}
+            {...inputs.phoneNumber}
             dispatch={dispatch}
-            event="setPhoneNumber"
+            value={phoneNumber}
           />
         </Container>
       </SideBar>
       <Navigation page="one">
-        <Button type="next">Next Step</Button>
+        <Button type="next" disable={isThereError}>
+          Next Step
+        </Button>
       </Navigation>
     </>
   );

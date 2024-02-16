@@ -20,15 +20,28 @@
 .next {
   background-color: var(--color-primary--marine);
 }
+.next:active {
+  opacity: 0.88;
+}
 
 .confirm {
   background-color: var(--color-primary--purplish);
+}
+.confirm:active {
+  opacity: 0.6;
 }
 
 .change {
   text-decoration: solid 0.3rem underline;
 }
-
 .change:hover {
   cursor: pointer;
+}
+
+.change:active {
+  color: var(--color-primary--purplish);
+}
+
+.back:active {
+  color: var(--color-primary--marine);
 }

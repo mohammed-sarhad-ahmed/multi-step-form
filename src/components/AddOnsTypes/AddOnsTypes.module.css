@@ -21,8 +21,12 @@
 }
 
 .checked {
-  border: 0.2rem solid var(--color-primary--purplish);
   background-color: var(--color-secondary--Magnolia);
+}
+
+.container:hover,
+.checked {
+  border: 0.08rem solid var(--color-primary--purplish);
 }
 
 @media screen and (max-width: 380px) {

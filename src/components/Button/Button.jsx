@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Button.module.css";
-function Button({ children, type }) {
+function Button({ children, type, disable }) {
   const location = useLocation();
   const navigate = useNavigate();
 
   return (
     <button
       className={styles[type]}
+      disabled={disable || false}
       onClick={() => navigator(navigate, location, type)}
     >
       {children}
@@ -26,8 +27,14 @@ function navigator(navigate, location, type) {
     case "/stepthree":
       whereToNavigate = type === "back" ? "/steptwo" : "/stepfour";
       break;
+
     case "/stepfour":
-      whereToNavigate = type === "back" ? "/stepthree" : "/stepfive";
+      whereToNavigate =
+        type === "back"
+          ? "/stepthree"
+          : type === "change"
+          ? "/steptwo"
+          : "/stepfive";
       break;
   }
   navigate(whereToNavigate);

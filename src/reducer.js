@@ -3,7 +3,7 @@ export const initialState = {
   name: "",
   email: "",
   phoneNumber: "",
-  activePlan: "",
+  activePlan: "arcade",
   checkedAddOns: [],
 };
 

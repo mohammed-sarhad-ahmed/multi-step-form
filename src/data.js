@@ -20,6 +20,18 @@ class Plan {
   }
 }
 
+class Input {
+  constructor(type, label, placeholder, event, errorMsg, pattern) {
+    this.type = type;
+    this.label = label;
+    this.placeholder = placeholder;
+    this.event = event;
+    this.errorMsg = errorMsg;
+    this.pattern = pattern;
+    this.requiredError = "the field is required";
+  }
+}
+
 class Yearly extends Plan {
   constructor(type, price) {
     super(type, price);
@@ -48,6 +60,26 @@ class Image {
     this.alt = alt;
   }
 }
+
+//input
+
+const name = new Input("text", "Name", "e.g. Stephen King", "setName");
+const emailAddress = new Input(
+  "text",
+  "Email Address",
+  "e.g. StephenKing@lorem.com",
+  "setEmail",
+  "use an valid email address",
+  `^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$`
+);
+const phoneNumber = new Input(
+  "tel",
+  "Phone Number ",
+  "e.g. +1 234 567 890",
+  "setPhoneNumber",
+  "use a valid phone number",
+  `^(\\+\\d{1,2}\\s?)?(\\(\\d{3}\\)|\\d{3})[\\-\\s]?\\d{3}[\\-\\s]?\\d{3,4}$`
+);
 
 //arcade
 const arcadeMonthly = new Monthly("arcade", MONTHLY_ARCADE_PRICE);
@@ -104,6 +136,8 @@ const customizableProfileYearly = new AddOn(
   "Custom theme on your profile"
 );
 
+const inputs = { name, emailAddress, phoneNumber };
+
 const plansMonthly = [arcadeMonthly, advancedMonthly, proMonthly];
 const plansYearly = [arcadeMYearly, advancedYearly, proYearly];
 
@@ -118,4 +152,4 @@ const addonsYearly = [
   customizableProfileYearly,
 ];
 
-export { addonsMonthly, addonsYearly, plansMonthly, plansYearly };
+export { addonsMonthly, addonsYearly, plansMonthly, plansYearly, inputs };
