@@ -65,7 +65,7 @@ class Image {
 
 const name = new Input("text", "Name", "e.g. Stephen King", "setName");
 const emailAddress = new Input(
-  "text",
+  "email",
   "Email Address",
   "e.g. StephenKing@lorem.com",
   "setEmail",

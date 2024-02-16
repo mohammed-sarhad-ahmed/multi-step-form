@@ -6,6 +6,7 @@ import StepTwo from "./pages/StepTwo/StepTwo.jsx";
 import StepThree from "./pages/StepThree/StepThree.jsx";
 import StepFour from "./pages/StepFour/StepFour.jsx";
 import StepFive from "./pages/StepFive/StepFive.jsx";
+import { useState } from "react";
 
 function App() {
   const [
@@ -19,6 +20,11 @@ function App() {
     },
     dispatch,
   ] = useReducer(reducer, initialState);
+  const [blur, setBlur] = useState({
+    emailBlur: false,
+    nameBlur: false,
+    phoneNumberBlur: false,
+  });
 
   return (
     <div className="app">
@@ -33,6 +39,8 @@ function App() {
                 email={email}
                 phoneNumber={phoneNumber}
                 name={name}
+                blur={blur}
+                setBlur={setBlur}
               />
             }
           />

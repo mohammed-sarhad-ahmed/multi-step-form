@@ -1,22 +1,23 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Button.module.css";
-function Button({ children, type, disable }) {
+function Button({ children, type, disable, setBlur }) {
   const location = useLocation();
   const navigate = useNavigate();
 
   return (
     <button
       className={styles[type]}
-      disabled={disable || false}
-      onClick={() => navigator(navigate, location, type)}
+      onClick={() => navigator(navigate, location, type, disable, setBlur)}
     >
       {children}
     </button>
   );
 }
 
-function navigator(navigate, location, type) {
+function navigator(navigate, location, type, disable, setBlur) {
   let whereToNavigate;
+  if (disable)
+    return setBlur({ emailBlur: true, nameBlur: true, phoneNumberBlur: true });
   switch (location.pathname) {
     case "/stepone":
       whereToNavigate = "/steptwo";

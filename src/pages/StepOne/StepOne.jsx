@@ -8,9 +8,9 @@ import Container from "../../components/Container/Container";
 import { inputs } from "../../data";
 import { useEffect, useState } from "react";
 
-function StepOne({ name, email, phoneNumber, dispatch }) {
+function StepOne({ name, email, phoneNumber, dispatch, blur, setBlur }) {
   const [isThereError, setIsThereError] = useState(true);
-  console.log(isThereError);
+
   useEffect(() => {
     const inputs = document.querySelectorAll("input");
     for (const input of inputs) {
@@ -30,6 +30,8 @@ function StepOne({ name, email, phoneNumber, dispatch }) {
             {...inputs.name}
             dispatch={dispatch}
             value={name}
+            blur={blur.nameBlur}
+            setBlur={setBlur}
           />
         </Container>
         <Container className="input">
@@ -37,6 +39,8 @@ function StepOne({ name, email, phoneNumber, dispatch }) {
             {...inputs.emailAddress}
             dispatch={dispatch}
             value={email}
+            blur={blur.emailBlur}
+            setBlur={setBlur}
           />
         </Container>
         <Container className="input">
@@ -44,11 +48,13 @@ function StepOne({ name, email, phoneNumber, dispatch }) {
             {...inputs.phoneNumber}
             dispatch={dispatch}
             value={phoneNumber}
+            blur={blur.phoneNumberBlur}
+            setBlur={setBlur}
           />
         </Container>
       </SideBar>
       <Navigation page="one">
-        <Button type="next" disable={isThereError}>
+        <Button type="next" disable={isThereError} setBlur={setBlur}>
           Next Step
         </Button>
       </Navigation>
