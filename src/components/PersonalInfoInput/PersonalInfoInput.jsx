@@ -13,7 +13,6 @@ function PersonalInfoInput({
   blur,
   setBlur,
 }) {
-  console.log(type, blur);
   return (
     <>
       <label htmlFor={type} className={styles.label}>
